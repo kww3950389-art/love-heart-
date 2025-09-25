@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сердце любви</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="love-counter" id="counter">Любовь: 0%</div>
+
+  <div class="heart-container" onclick="fillHeart()">
+    <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+      <!-- Контур сердца -->
+      <path d="M50 91S4 57 4 30a23 23 0 0 1 46 0 23 23 0 0 1 46 0C96 57 50 91 50 91Z" 
+            fill="none" stroke="red" stroke-width="5"/>
+
+      <!-- Маска и заливка -->
+      <defs>
+        <clipPath id="heartClip">
+          <path d="M50 91S4 57 4 30a23 23 0 0 1 46 0 23 23 0 0 1 46 0C96 57 50 91 50 91Z"/>
+        </clipPath>
+      </defs>
+      <rect id="fillRect" x="0" y="100" width="100" height="100" 
+            class="fill-mask" clip-path="url(#heartClip)" />
+    </svg>
+  </div>
+
+  <div class="full-love" id="message"></div>
+  <div class="rain-container" id="rain"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
